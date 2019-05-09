@@ -29,3 +29,9 @@ le configurer et le versionner.
 Cette quête a pour but de créer ta première page sous Symfony.
 ```
 
+## Quête Le routing avancé
+
+```
+Cette quête a pour but de voir comment créer des routes plus avancées, 
+te permettant de passer des paramètres et d'imposer un certain nombre de contraintes..
+```
