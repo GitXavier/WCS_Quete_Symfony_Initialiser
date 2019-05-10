@@ -35,3 +35,10 @@ Cette quête a pour but de créer ta première page sous Symfony.
 Cette quête a pour but de voir comment créer des routes plus avancées, 
 te permettant de passer des paramètres et d'imposer un certain nombre de contraintes..
 ```
+
+## Créer ta première entité avec Doctrine
+
+```
+Cette quête a pour but de te faire découvrir comment créer une entité 
+et mettre à jour ta base de données grâce à celle-ci via Doctrine.
+```
