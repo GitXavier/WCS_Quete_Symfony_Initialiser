@@ -17,14 +17,9 @@ class Category
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $name;
-
-    /**
      * @ORM\Column(type="string", length=100)
      */
-    private $Category;
+    private $name;
 
     public function getId(): ?int
     {
