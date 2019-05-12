@@ -36,9 +36,10 @@ Cette quête a pour but de voir comment créer des routes plus avancées,
 te permettant de passer des paramètres et d'imposer un certain nombre de contraintes..
 ```
 
-## Créer ta première entité avec Doctrine
+## Relation "Many-To-One" avec Doctrine
 
 ```
-Cette quête a pour but de te faire découvrir comment créer une entité 
-et mettre à jour ta base de données grâce à celle-ci via Doctrine.
+Cette quête a pour but de t'apprendre à créer des relations entre tes différentes entités. 
+Tous les liens doivent être renseignés au sein des differentes classes pour que l'ORM sache 
+les interpréter. Pour cela, tu vas utiliser les annotations que tu as vu sur une quête précédente.
 ```
