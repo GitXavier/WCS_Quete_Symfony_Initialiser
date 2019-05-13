@@ -43,3 +43,14 @@ Cette quête a pour but de t'apprendre à créer des relations entre tes différ
 Tous les liens doivent être renseignés au sein des differentes classes pour que l'ORM sache 
 les interpréter. Pour cela, tu vas utiliser les annotations que tu as vu sur une quête précédente.
 ```
+
+## Récupérer des données stockées avec Doctrine
+
+```
+Cette quête a pour but de voir comment ressortir différents articles, soit par le slug 
+(vu durant la quête sur le routing avancé), par une catégorie, soit en ressortant tous 
+les articles à la volée ! Avant tout, vide (purge) les tables dans ta base de données 
+en gardant les mêmes entités Article et Catégorie. Pour cela, libre à toi de passer par 
+le moyen de ton choix : en accédant à ta DB via le terminal de commande, via phpMyqdmin, 
+l’outil de base de données de PHPStorm, etc.
+```

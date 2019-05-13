@@ -1,20 +1,18 @@
-{# templates/blog/show.html.twig #}
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ slug }}{% endblock %}
-
-{% block stylesheets %}{% endblock %}
+{% block title %}All articles{% endblock %}
 
 {% block body %}
-
-    <div>
-        <h1>Real article s title : {{ article.title }}</h1>
-        <h2>Category : {{ article.category.name }}</h2>
-        <p>{{ article.content }}</p>
-    </div>
-
+    <h1>3 articles from article's table : </h1>
+    {% for article in categoryArticle %}
+        <div>
+            <h2>{{ article.id }} / {{ article.title }} - Category : {{ article.category.name }}</h2>
+            <p>{{ article.content }}</p>
+        </div>
+    {% else %}
+        Aucun article trouvé.
+    {% endfor %}
     <a href="{{ path('app_index') }}">
         Back to homepage.
     </a>
-
 {% endblock %}
