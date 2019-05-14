@@ -79,6 +79,7 @@ class BlogController extends AbstractController
         );
     }
 
+
     /**
      * @param string $categoryName
      * @return Response
@@ -86,6 +87,20 @@ class BlogController extends AbstractController
      */
     public function showByCategory(string $categoryName)
     {
+
+        $category = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->findOneBy(['name' => $categoryName]);
+
+        $articles = $category->getArticles();
+
+        $article = $this->getDoctrine()
+            ->getRepository(Article::class)
+            ->findOneBy(['category_id' => $categoryName]);
+
+/*
+ * unidirectionnelle
+ *
         $category = $this->getDoctrine()
             ->getRepository(Category::class)
             ->findOneBy(['name' => $categoryName]);
@@ -93,12 +108,17 @@ class BlogController extends AbstractController
         $categoryArticle = $this->getDoctrine()
             ->getRepository(Article::class)
             ->findBy(['category' => $category], ['id' => 'DESC'], 3);
+*/
 
         return $this->render(
             'blog/category.html.twig', [
-                'categoryArticle' => $categoryArticle
+                'articles' => $articles,
+                'categories' => $category
             ]);
+
     }
+
+
     /**
      * @Route("/pages/{slug}", name="blog_pages", requirements={"slug"="[a-z0-9-]+"})
      */

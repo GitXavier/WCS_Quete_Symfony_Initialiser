@@ -54,3 +54,10 @@ en gardant les mêmes entités Article et Catégorie. Pour cela, libre à toi de
 le moyen de ton choix : en accédant à ta DB via le terminal de commande, via phpMyqdmin, 
 l’outil de base de données de PHPStorm, etc.
 ```
+
+## Les relations bidirectionnelles avec Doctrine
+
+```
+Cette quête a pour but de voir qu'il est possible d'effectuer une relation "bidirectionnelle", 
+afin de récupérer aussi les articles appartenant à une catégorie depuis ta classe Category.
+```
