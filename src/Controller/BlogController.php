@@ -81,36 +81,55 @@ class BlogController extends AbstractController
 
 
     /**
-     * @param string $categoryName
+     *
      * @return Response
-     * @Route("/category/{categoryName}", name="show_category")
+     * @Route("/category/{name}", name="show_category")
      */
+    public function showByCategory(Category $categoryName)
+    {
+
+        $articles = $categoryName->getArticles();
+
+        return $this->render(
+            'blog/category.html.twig', [
+            'articles' => $articles,
+            'categories' => $categoryName
+        ]);
+
+ /*
+        /**
+         * @param string $categoryName
+         * @return Response
+         * @Route("/category/{categoryName}", name="show_category")
+         *
     public function showByCategory(string $categoryName)
     {
 
-        $category = $this->getDoctrine()
-            ->getRepository(Category::class)
-            ->findOneBy(['name' => $categoryName]);
+     * Bidirectionnelle
+             $category = $this->getDoctrine()
+                 ->getRepository(Category::class)
+                 ->findOneBy(['name' => $categoryName]);
 
-        $articles = $category->getArticles();
+             $articles = $category->getArticles();
 
-/*
- * unidirectionnelle
- *
-        $category = $this->getDoctrine()
-            ->getRepository(Category::class)
-            ->findOneBy(['name' => $categoryName]);
 
-        $categoryArticle = $this->getDoctrine()
-            ->getRepository(Article::class)
-            ->findBy(['category' => $category], ['id' => 'DESC'], 3);
-*/
+      * unidirectionnelle
+      *
+             $category = $this->getDoctrine()
+                 ->getRepository(Category::class)
+                 ->findOneBy(['name' => $categoryName]);
+
+             $categoryArticle = $this->getDoctrine()
+                 ->getRepository(Article::class)
+                 ->findBy(['category' => $category], ['id' => 'DESC'], 3);
+
 
         return $this->render(
             'blog/category.html.twig', [
                 'articles' => $articles,
                 'categories' => $category
             ]);
+ */
 
     }
 

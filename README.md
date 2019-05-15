@@ -61,3 +61,10 @@ l’outil de base de données de PHPStorm, etc.
 Cette quête a pour but de voir qu'il est possible d'effectuer une relation "bidirectionnelle", 
 afin de récupérer aussi les articles appartenant à une catégorie depuis ta classe Category.
 ```
+## Le param converter
+
+```
+Le param converter est une fonctionnalité très pratique de Symfony. 
+Cela te permet de convertir directement des paramètres passés à travers 
+une routes en objets.
+```
