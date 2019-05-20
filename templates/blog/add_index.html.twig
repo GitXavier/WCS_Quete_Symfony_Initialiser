@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+{{ dump(categories) }}
+
+    <div class="jumbotron text-center">
+        <h1>Add Category</h1>
+    </div>
+
+    <br>
+    <a href="{{ path('add_category') }}">
+        Testing Add Category.
+    </a>
+
+{% endblock %}

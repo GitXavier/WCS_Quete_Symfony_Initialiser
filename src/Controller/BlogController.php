@@ -33,9 +33,9 @@ class BlogController extends AbstractController
         }
 
         return $this->render(
-            'blog/index.html.twig',
-            ['articles' => $articles]
-        );
+            'blog/index.html.twig', [
+                'articles' => $articles,
+            ]);
     }
 
     /**
