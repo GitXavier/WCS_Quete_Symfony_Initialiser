@@ -20,17 +20,16 @@ Class CategoryController extends AbstractController
 {
     /**
      * @return Response
-     * @Route ("/category", name="add_index")
+     * @Route ("/", name="show_category")
      */
-    public function index():Response
+    public function show():Response
     {
 
         $categories = $this->getDoctrine()
             ->getRepository(Category::class)
             ->findAll();
 
-        return $this->render('blog/add_index.html.twig', [
-            //'form' => $form->createView(),
+        return $this->render('blog/show_catecory.html.twig', [
             'categories' => $categories
         ]);
     }
@@ -38,7 +37,7 @@ Class CategoryController extends AbstractController
     /**
      *
      * @param $request Request
-     * @Route("/", name="add_category")
+     * @Route("/add", name="add_category")
      * @return Response
      */
     public function add(Request $request) : Response
@@ -57,7 +56,7 @@ Class CategoryController extends AbstractController
             $entityManager->persist($category);
             $entityManager->flush();
 
-            return $this->redirectToRoute('add_index');
+            return $this->redirectToRoute('show_category');
         }
 
         return $this->render('blog/add_category.html.twig',[

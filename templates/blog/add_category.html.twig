@@ -5,8 +5,13 @@
 
 
 
-    <div class="jumbotron text-center">
-        <h1>Add Category</h1>
+    <div class="jumbotron">
+        <h1 class=" text-center" >Ajout d'une catégorie</h1>
+        <div>
+            <a href="{{ path('show_category') }}">Listes des catégories</a>
+            <br>
+            <a href="{{ path('app_index') }}">Retour à la page d'accueil </a>
+        </div>
     </div>
 
 
@@ -18,12 +23,5 @@
         <button class="btn btn-primary mt-3">{{ button_label|default('Save') }}</button>
     </div>{{ form_end(form) }}
 
-    <br>
-    <a href="{{ path('add_index') }}">
-        Show Category.
-    </a>
-    <br>
-    <a href="{{ path('app_index') }}">
-         Back Default.
-    </a>
+
 {% endblock %}

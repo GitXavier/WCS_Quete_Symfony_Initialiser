@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Entity\Category;
+use App\Entity\Tag;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
@@ -55,14 +56,9 @@ class BlogController extends AbstractController
                 ->createNotFoundException('No slug has been sent to find an article in article\'s table.');
         }
 
-        $slug = preg_replace(
-            '/-/',
-            ' ', ucwords(trim(strip_tags($slug)), "-")
-        );
-
         $article = $this->getDoctrine()
             ->getRepository(Article::class)
-            ->findOneBy(['title' => mb_strtolower($slug)]);
+            ->findOneBy(['id' => $slug]);
 
         if (!$article) {
             throw $this->createNotFoundException(
@@ -79,7 +75,6 @@ class BlogController extends AbstractController
         );
     }
 
-
     /**
      *
      * @return Response
@@ -95,52 +90,5 @@ class BlogController extends AbstractController
             'articles' => $articles,
             'categories' => $categoryName
         ]);
-
- /*
-        /**
-         * @param string $categoryName
-         * @return Response
-         * @Route("/category/{categoryName}", name="show_category")
-         *
-    public function showByCategory(string $categoryName)
-    {
-
-     * Bidirectionnelle
-             $category = $this->getDoctrine()
-                 ->getRepository(Category::class)
-                 ->findOneBy(['name' => $categoryName]);
-
-             $articles = $category->getArticles();
-
-
-      * unidirectionnelle
-      *
-             $category = $this->getDoctrine()
-                 ->getRepository(Category::class)
-                 ->findOneBy(['name' => $categoryName]);
-
-             $categoryArticle = $this->getDoctrine()
-                 ->getRepository(Article::class)
-                 ->findBy(['category' => $category], ['id' => 'DESC'], 3);
-
-
-        return $this->render(
-            'blog/category.html.twig', [
-                'articles' => $articles,
-                'categories' => $category
-            ]);
- */
-
     }
-
-
-    /**
-     * @Route("/pages/{slug}", name="blog_pages", requirements={"slug"="[a-z0-9-]+"})
-     */
-    public function pages($slug = 'article-sans-titre')
-    {
-        $slug = ucwords(implode(' ', explode('-', $slug)));
-        return $this->render('blog/pages.html.twig', ['pages_slug' => $slug]);
-    }
-
 }

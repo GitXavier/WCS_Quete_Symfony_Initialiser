@@ -1,24 +1,35 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Bienvenue sur mon blog</h1>
 
+    <div class="jumbotron text-center">
+        <h1>Bienvenue sur mon blog</h1>
+    </div>
 
-    <a href="{{ path('blog_show', { 'slug': "javascript-vs-php" }) }}">
-        Testing show() method from BlogController with a real article s slug.
-    </a>
-    <br>
-    <a href="{{ path('blog_index') }}">
-        Testing index() method from BlogController to view all articles.
-    </a>
-    <br>
-    <a href="{{ path('show_category', {'name': "javascript"}) }}">
-        Testing showByCategory() method from BlogController to view 3 articles.
-    </a>
-    <br>
-    <a href="{{ path('add_category') }}">
-        Testing Add Category.
-    </a>
-
+    <div class="container">
+        <a href="{{ path('blog_show', { 'slug': "javascript-vs-php" }) }}">
+            1- View article "javascript-vs-php"
+        </a>
+        <br>
+        <a href="{{ path('blog_index') }}">
+            2- Listes des Articles.
+        </a>
+        <br>
+        <a href="{{ path('show_category', {'name': "javascript"}) }}">
+            3- Listes des catégories.
+        </a>
+        <br>
+        <a href="{{ path('add_category') }}">
+            4- Ajouter une catégorie.
+        </a>
+        <br>
+        <a href="{{ path('show_tag') }}">
+            5- Listes des tags.
+        </a>
+        <br>
+        <a href="#">
+            4- Ajouter un tag.
+        </a>
+    </div>
 {% endblock %}
 
