@@ -81,3 +81,10 @@ des informations de tes utilisateurs dans Symfony
 ```
 Cette quête à pour but de savoir mettre en place une relation ManyToMany.
 ```
+
+## Symfony : Générer un CRUD
+
+```
+Cette quête à pour but de générer un CRUD, comprendre ce qui est généré, 
+modifier le CRUD pour l'adapter à nos besoins.
+```
