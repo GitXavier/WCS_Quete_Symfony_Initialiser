@@ -88,3 +88,9 @@ Cette quête à pour but de savoir mettre en place une relation ManyToMany.
 Cette quête à pour but de générer un CRUD, comprendre ce qui est généré, 
 modifier le CRUD pour l'adapter à nos besoins.
 ```
+
+## Initiation au module Webpack Encore
+
+```
+Cette quête à pour but d'ntégrer Webpack à Symfony et de Configurer Webpack Encore
+```

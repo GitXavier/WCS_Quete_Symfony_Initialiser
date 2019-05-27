@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Entity\Category;
-use App\Entity\Tag;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
@@ -59,6 +58,7 @@ class BlogController extends AbstractController
         $article = $this->getDoctrine()
             ->getRepository(Article::class)
             ->findOneBy(['id' => $slug]);
+
 
         if (!$article) {
             throw $this->createNotFoundException(
