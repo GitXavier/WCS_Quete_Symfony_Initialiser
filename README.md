@@ -92,5 +92,11 @@ modifier le CRUD pour l'adapter à nos besoins.
 ## Initiation au module Webpack Encore
 
 ```
-Cette quête à pour but d'ntégrer Webpack à Symfony et de Configurer Webpack Encore
+Cette quête à pour but d'intégrer Webpack à Symfony et de Configurer Webpack Encore
+```
+
+## Symfony : EntityType
+
+```
+Cette quête à pour but de découvrir l'EntityType et de savoir l'implémenter
 ```
