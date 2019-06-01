@@ -100,3 +100,13 @@ Cette quête à pour but d'intégrer Webpack à Symfony et de Configurer Webpack
 ```
 Cette quête à pour but de découvrir l'EntityType et de savoir l'implémenter
 ```
+
+## Symfony les fixtures
+
+```
+Cette quête à pour but:
+Installer le composant DoctrineFixturesBundle,
+Utiliser les fixtures dans Symfony de façon simple,
+Utiliser les fixtures dans Symfony en gérant les relations,
+Faire appel à une librairie de génération de contenu aléatoire.
+```
