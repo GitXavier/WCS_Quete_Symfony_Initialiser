@@ -14,6 +14,7 @@
                 <h2>{{ loop.index }} /
                     <a href="{{ path('blog_show', { 'slug': article.id }) }}">{{ article.title}}</a>
                     - Category : {{ article.category.name }}</h2><br>
+                <h2>Slug: {{ article.slug }}</h2>
                 <h4>
                     {% for tag in article.tags %}
                         <li><a href="/tag/{{ tag.name }} ">{{ tag.name }}</a></li>

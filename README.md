@@ -110,3 +110,12 @@ Utiliser les fixtures dans Symfony de façon simple,
 Utiliser les fixtures dans Symfony en gérant les relations,
 Faire appel à une librairie de génération de contenu aléatoire.
 ```
+
+## Introduction aux “Services”
+
+```
+Cette quête à pour but:
+Générer le slug d'un article
+Appeler le service
+Configurer le service
+```
