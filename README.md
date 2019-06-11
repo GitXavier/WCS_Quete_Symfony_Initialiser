@@ -119,3 +119,12 @@ Générer le slug d'un article
 Appeler le service
 Configurer le service
 ```
+
+## Envoi d’e-mail
+
+```
+Cette quête à pour but:
+Envoyer un mail de notification à l'administrateur.
+Optimiser l'envoi des mails dans ton code.
+Harmoniser l'interface de tes mailings avec ton application.
+```

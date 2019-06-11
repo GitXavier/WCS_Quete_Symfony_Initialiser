@@ -16,9 +16,14 @@ class Slugify
 
         $slug = strtr($input, $translit);
 
-        $slug = mb_strtolower(preg_replace( '/[^a-zA-Z0-9\-\s]/', '', $slug ));
+        /*$slug = mb_strtolower(preg_replace( '/[^a-zA-Z0-9\-\s]/', '', $slug ));
         $slug = str_replace(' ','-',trim($slug));
-        $slug = preg_replace('/([-])\\1+/', '$1', $slug);
+        $slug = preg_replace('/([-])\\1+/', '$1', $slug);*/
+
+        $input = str_replace(array_keys($translit), array_values($translit), $input);
+        $input = preg_replace('/[^A-Za-z0-9-]/', '', $input);
+        $input = preg_replace('/-+/', '-', $input);
+        $input = trim($input, '-');
 
         return $slug;
     }
