@@ -128,3 +128,13 @@ Envoyer un mail de notification à l'administrateur.
 Optimiser l'envoi des mails dans ton code.
 Harmoniser l'interface de tes mailings avec ton application.
 ```
+
+## 17.1 Gestion des utilisateurs
+
+```
+Cette quête à pour but:
+Utilisation de make:user, présentation de l'entité User.
+Utilisation des fixtures pour créer différents users.
+Utilisation de make:auth, pour la configuration de la gestion du login
+Ajout d'une fonctionnalité de "déconnexion".
+```
