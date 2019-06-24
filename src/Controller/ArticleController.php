@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,6 +29,8 @@ class ArticleController extends AbstractController
 
     /**
      * @Route("/new", name="article_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_AUTHOR")
+     *
      */
     public function new(Request $request, Slugify $slugify, \Swift_Mailer $mailer): Response
     {
@@ -69,6 +72,8 @@ class ArticleController extends AbstractController
 
     /**
      * @Route("/{id}", name="article_show", methods={"GET"})
+     * @IsGranted("ROLE_AUTHOR")
+     *
      */
     public function show(Article $article): Response
     {
@@ -79,27 +84,34 @@ class ArticleController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="article_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_AUTHOR")
      */
     public function edit(Request $request, Article $article, Slugify $slugify): Response
     {
+
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $slug = $slugify->generate($article->getTitle());
-            $article->setSlug($slug);
+        if ($this->getUser() === $article->getAuthor() || $this->isGranted('ROLE_ADMIN') ){
 
-            $this->getDoctrine()->getManager()->flush();
+            if ($form->isSubmitted() && $form->isValid()) {
+                $slug = $slugify->generate($article->getTitle());
+                $article->setSlug($slug);
 
-            return $this->redirectToRoute('article_index', [
-                'id' => $article->getId(),
+                $this->getDoctrine()->getManager()->flush();
+
+                return $this->redirectToRoute('article_index', [
+                    'id' => $article->getId(),
+                ]);
+            }
+
+            return $this->render('article/edit.html.twig', [
+                'article' => $article,
+                'form' => $form->createView(),
             ]);
         }
 
-        return $this->render('article/edit.html.twig', [
-            'article' => $article,
-            'form' => $form->createView(),
-        ]);
+        return $this->redirectToRoute('article_index');
     }
 
     /**

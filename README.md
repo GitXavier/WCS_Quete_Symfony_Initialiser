@@ -138,3 +138,10 @@ Utilisation des fixtures pour créer différents users.
 Utilisation de make:auth, pour la configuration de la gestion du login
 Ajout d'une fonctionnalité de "déconnexion".
 ```
+
+## 17.2 Sécurisons nos routes
+```
+Cette quête à pour but:
+le type d’encodage du mot de passe utilisateur
+la gestion de tes utilisateurs
+```

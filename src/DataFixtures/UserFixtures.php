@@ -23,7 +23,18 @@ public function load(ObjectManager $manager)
 
         // Création d’un utilisateur de type “auteur”
         $author = new User();
-        $author->setEmail('user@google.com');
+        $author->setEmail('user1@google.com');
+        $author->setRoles(['ROLE_AUTHOR']);
+        $author->setPassword($this->passwordEncoder->encodePassword(
+            $author,
+            'user'
+        ));
+
+        $manager->persist($author);
+
+        // Création d’un utilisateur de type “auteur”
+        $author = new User();
+        $author->setEmail('user2@google.com');
         $author->setRoles(['ROLE_AUTHOR']);
         $author->setPassword($this->passwordEncoder->encodePassword(
             $author,
