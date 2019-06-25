@@ -16,6 +16,7 @@
                 <th>Title</th>
                 <th>Content</th>
                 <th>Slug</th>
+                <th>Tags</th>
                 <th>actions</th>
 
             </tr>
@@ -27,6 +28,14 @@
                 <td>{{ article.title }}</td>
                 <td>{{ article.content }}</td>
                 <td>{{ article.slug }}</td>
+                <td>
+                    {% for tag in article.tags %}
+                        <li>{{ tag.name }} </li>
+                    {% else %}
+                        <li>No tags for this article</li>
+                    {% endfor %}
+                </td>
+
                 <td>
                     <a href="{{ path('article_show', {'id': article.id}) }}">show</a>
                     <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
