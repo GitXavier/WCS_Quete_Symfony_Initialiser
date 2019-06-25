@@ -138,3 +138,30 @@ Utilisation des fixtures pour créer différents users.
 Utilisation de make:auth, pour la configuration de la gestion du login
 Ajout d'une fonctionnalité de "déconnexion".
 ```
+
+## 17.2 Sécurisons nos routes
+
+```
+Cette quête à pour but:
+Gérer l'accès à ton application en fonction des rôles.
+Découvrir les différentes méthodes possibles pour y arriver.
+```
+
+## 18 Validation
+
+```
+Cette quête à pour but:
+Comment écrire une validation dans Symfony
+Découvrir les différentes contraintes existantes
+Exécuter la validation
+```
+
+
+## 19 Requêtes personnalisées
+
+```
+Cette quête à pour but:
+Diagnostiquer le nombre de requêtes SQL pour afficher une page
+Optimiser le nombre de requêtes avec le QueryBuilder
+Optimiser le nombre de requêtes avec le DQL
+```
