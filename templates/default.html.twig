@@ -8,26 +8,16 @@
 
     <div class="container">
         <a href="{{ path('article_index')}}">
-            1- CRUD Article
+            1- Articles
         </a>
         <br>
-        <a href="{{ path('blog_index') }}">
-            2- Listes des Articles.
+        <a href="{{ path('category_index')}}">
+            2- Catégories.
         </a>
         <br>
-        <a href="{{ path('show_category', {'name': "javascript"}) }}">
-            3- Listes des catégories.
+        <a href="{{ path('tag_index') }}">
+            3- tags.
         </a>
-        <br>
-        <a href="{{ path('add_category') }}">
-            4- Ajouter une catégorie.
-        </a>
-        <br>
-        <a href="{{ path('show_tag') }}">
-            5- Listes des tags.
-        </a>
-        <br>
-
     </div>
 {% endblock %}
 
