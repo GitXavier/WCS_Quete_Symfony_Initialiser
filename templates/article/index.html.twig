@@ -4,6 +4,18 @@
 
 {% block body %}
 
+
+    {% for articles, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ articles }} text-center">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+
+
+
     <h1>Article index</h1>
     <a href="{{ path('app_index') }}">
         Back to homepage.

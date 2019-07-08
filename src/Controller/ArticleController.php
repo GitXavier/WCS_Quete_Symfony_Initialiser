@@ -22,7 +22,7 @@ class ArticleController extends AbstractController
     public function index(ArticleRepository $articleRepository): Response
     {
         return $this->render('article/index.html.twig', [
-            'articles' => $articleRepository->findAllWithCategoriesAndTags(),
+            'articles' => $articleRepository->findAll(),
         ]);
     }
 
@@ -46,6 +46,8 @@ class ArticleController extends AbstractController
 
             $entityManager->persist($article);
             $entityManager->flush();
+
+            $this->addFlash('success', 'l\'article vient d\'être ajouté');
 
             $message = (new \Swift_Message('Un nouvel article vient d\'être publié sur ton blog !'))
                 ->setFrom($this->getParameter('mailer_from'))
@@ -91,6 +93,8 @@ class ArticleController extends AbstractController
 
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success', 'l\'article vient d\'être modifié');
+
             return $this->redirectToRoute('article_index', [
                 'id' => $article->getId(),
             ]);
@@ -111,6 +115,8 @@ class ArticleController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($article);
             $entityManager->flush();
+
+            $this->addFlash('danger', 'l\'article vient d\'être supprimé');
         }
 
         return $this->redirectToRoute('article_index');
