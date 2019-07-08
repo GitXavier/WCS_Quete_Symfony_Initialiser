@@ -165,3 +165,12 @@ Diagnostiquer le nombre de requêtes SQL pour afficher une page
 Optimiser le nombre de requêtes avec le QueryBuilder
 Optimiser le nombre de requêtes avec le DQL
 ```
+
+## 20 Sessions et messages flash
+
+```
+Cette quête à pour but:
+Utilisation des sessions sous Symfony
+Principe de fonctionnement des messages flash
+Mise en place et affichage des messages flash
+```

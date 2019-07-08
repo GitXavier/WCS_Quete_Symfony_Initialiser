@@ -1,9 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-    {{ dump(categories) }}
-
     <div class="jumbotron ">
         <h1 class="text-center">Listes des catégories</h1>
 
@@ -14,5 +11,13 @@
 
     <br>
 
+    <div class="container">
+    {% for category in categories %}
 
+        <li>{{ category.name }}</li>
+
+        <br>
+
+    {% endfor %}
+    </div>
 {% endblock %}
