@@ -174,3 +174,11 @@ Utilisation des sessions sous Symfony
 Principe de fonctionnement des messages flash
 Mise en place et affichage des messages flash
 ```
+
+## 21 Ajax et favoris
+```
+Cette quête à pour but:
+Utilisation de la fonction javascript fetch
+Manipulation des Promise
+Réponse au format JSON
+```
