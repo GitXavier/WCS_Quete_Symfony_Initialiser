@@ -185,4 +185,14 @@ class User implements UserInterface
 
         return $this;
     }
+
+    public function isFavorite(Article $article)
+    {
+        if($this->favorite->contains($article)) {
+            $favorite = true;
+        } else {
+            $favorite = false;
+        }
+        return $favorite;
+    }
 }

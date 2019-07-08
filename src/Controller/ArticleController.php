@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -76,6 +77,7 @@ class ArticleController extends AbstractController
     {
         return $this->render('article/show.html.twig', [
             'article' => $article,
+            'isFavorite' => $this->getUser()->isFavorite($article)
         ]);
     }
 
@@ -121,4 +123,33 @@ class ArticleController extends AbstractController
 
         return $this->redirectToRoute('article_index');
     }
+
+    /**
+     * @Route("/{id}/favorite", name="article_favorite", methods={"GET","POST"})
+     *
+     */
+    public function  favorite(Article $article, EntityManagerInterface $manager)
+    {
+/*        $user = $this->getUser();
+        $user->addFavorite($article);
+
+        $this->getDoctrine()->getManager()->flush();
+
+        return $this->render('article/show.html.twig', [
+            'article' => $article,
+        ]);*/
+
+        if ($this->getUser()->getFavorite()->contains($article)) {
+            $this->getUser()->removeFavorite($article)   ;
+        } else {
+            $this->getUser()->favorite->addFavorite($article);
+        }
+
+        $manager->flush();
+
+        return $this->json([
+            'isFavorite' => $this->getUser()->isFavorite($article)
+        ]);
+    }
+
 }
