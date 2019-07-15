@@ -26,7 +26,12 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/add", name="add_category", methods={"GET","POST"})
+     * @Route({
+     *     "fr": "/ajouter",
+     *     "en": "/add",
+     *     "es": "/crear",
+     * }, name="add_category", methods={"GET","POST"})
+     *
      */
     public function add(Request $request): Response
     {
@@ -59,7 +64,11 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="edit_category", methods={"GET","POST"})
+     * @Route({
+     *     "fr": "/editer",
+     *     "en": "/edit",
+     *     "es": "/editar",
+     * }, name="edit_category", methods={"GET","POST"})
      */
     public function edit(Request $request, Category $category): Response
     {

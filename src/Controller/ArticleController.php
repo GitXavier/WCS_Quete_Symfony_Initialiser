@@ -28,7 +28,12 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="article_new", methods={"GET","POST"})
+     * @Route({
+     *     "fr": "/ajouter",
+     *     "en": "/new",
+     *     "es": "/crear",
+     * }, name="article_new", methods={"GET","POST"})
+     *
      */
     public function new(Request $request, Slugify $slugify, \Swift_Mailer $mailer): Response
     {
@@ -82,7 +87,11 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="article_edit", methods={"GET","POST"})
+     * @Route({
+     *     "fr": "/editer",
+     *     "en": "/edit",
+     *     "es": "/editar",
+     * }, name="article_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Article $article, Slugify $slugify): Response
     {
