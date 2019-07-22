@@ -17,6 +17,42 @@
         <source>account.login</source>
         <target>Conectarse</target>
       </trans-unit>
+      <trans-unit id="pO8wS6Q" resname="language">
+        <source>language</source>
+        <target>Idioma</target>
+      </trans-unit>
+      <trans-unit id="r6fsDSx" resname="language.spanish">
+        <source>language.spanish</source>
+        <target>Español</target>
+      </trans-unit>
+      <trans-unit id="6siqEVC" resname="language.fransh">
+        <source>language.fransh</source>
+        <target>Francés</target>
+      </trans-unit>
+      <trans-unit id="ebU9whW" resname="language.anglish">
+        <source>language.anglish</source>
+        <target>Inglés</target>
+      </trans-unit>
+      <trans-unit id="3P24U.9" resname="home.title">
+        <source>home.title</source>
+        <target>Bienvenido a mi blog</target>
+      </trans-unit>
+      <trans-unit id="OQ6Hu_f" resname="lien.articles">
+        <source>lien.articles</source>
+        <target>1-Bienes</target>
+      </trans-unit>
+      <trans-unit id="OO4jIyE" resname="lien.categorys">
+        <source>lien.categorys</source>
+        <target>2-Categorías</target>
+      </trans-unit>
+      <trans-unit id="nsHpAwg" resname="lien.tags">
+        <source>lien.tags</source>
+        <target>3-Etiquetas</target>
+      </trans-unit>
+      <trans-unit id="1mohDq6" resname="home.navbar">
+        <source>home.navbar</source>
+        <target>Bienvenida</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

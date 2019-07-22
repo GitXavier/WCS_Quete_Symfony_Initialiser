@@ -1,46 +1,50 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-5">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ path('app_index') }}">Accueil <span class="sr-only">(current)</span></a>
-            </li>
-
-{#            {% if app.user %}
+        <div>
+            <ul class="navbar-nav ml-5">
                 <li class="nav-item active">
-                    <span class="nav-link">Bonjour {{ app.user.email }} !</span>
+                    <a class="nav-link" href="{{ path('app_index') }}">
+                        {{ 'home.navbar'|trans }}
+                        <span class="sr-only">(current)
+                    </span></a>
+                </li>
+
+                {% if app.user %}
+                <li class="nav-item active">
+                    <span class="nav-link">
+                        {% trans with {'%username%': app.user.email} %}
+                            hello_username
+                        {% endtrans %}
+                     </span>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('app_logout') }}"> Se déconnecter</a>
+                    <a class="nav-link" href="{{ path('app_logout') }}"> {{ 'account.logout'|trans }}</a>
                 </li>
-            {% else %}
+                {% else %}
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('app_login') }}"> Se connecter</a>
+                   <a class="nav-link" href="{{ path('app_login') }}"> {{ 'account.login'|trans }}</a>
                 </li>
-            {% endif %}#}
+                {% endif %}
+            </ul>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                {{ 'language'|trans }}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+               <a class="dropdown-item" href="{{ path('app_index', {'_locale':'es'}) }}">{{ 'language.spanish'|trans }}</a><br>
+               <a class="dropdown-item" href="{{ path('app_index', {'_locale':'fr'}) }}">{{ 'language.fransh'|trans }}</a><br>
+               <a class="dropdown-item" href="{{ path('app_index', {'_locale':'en'}) }}">{{ 'language.anglish'|trans }}</a><br>
 
-            {% if app.user %}
-            <li class="nav-item active">
-                <span class="nav-link">
-                    {% trans with {'%username%': app.user.email} %}
-                        hello_username
-                    {% endtrans %}
-                 </span>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ path('app_logout') }}"> {{ 'account.logout'|trans }}</a>
-            </li>
-            {% else %}
-            <li class="nav-item active">
-               <a class="nav-link" href="{{ path('app_login') }}"> {{ 'account.login'|trans }}</a>
-            </li>
-            {% endif %}
-
-        </ul>
+            </div>
+        </div>
 
     </div>
 </nav>

@@ -13,12 +13,20 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Service\Slugify;
 
 /**
- * @Route("/article")
+ * @Route({
+ *     "fr": "/article",
+ *     "en": "/article",
+ *     "es": "/biene",
+ * })
  */
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/", name="article_index", methods={"GET"})
+     * @Route({
+     *     "fr": "/",
+     *     "en": "/",
+     *     "es": "/",
+     * }, name="article_index", methods={"GET"})
      */
     public function index(ArticleRepository $articleRepository): Response
     {

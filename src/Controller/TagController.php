@@ -11,12 +11,20 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/tag")
+ * @Route({
+ *     "fr": "/tag",
+ *     "en": "/tag",
+ *     "es": "/etiqueta",
+ * })
  */
 class TagController extends AbstractController
 {
     /**
-     * @Route("/", name="tag_index", methods={"GET"})
+     * @Route({
+     *     "fr": "/",
+     *     "en": "/",
+     *     "es": "/",
+     * }, name="tag_index", methods={"GET"})
      */
     public function index(TagRepository $tagRepository): Response
     {
