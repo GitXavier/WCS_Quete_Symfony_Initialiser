@@ -182,3 +182,11 @@ Utilisation de la fonction javascript fetch
 Manipulation des Promise
 Réponse au format JSON
 ```
+
+## 22 Internationalisation
+```
+Cette quête à pour but:
+Mettre en place le composant "translator" de Symfony.
+Rendre ton application prête à la traduction
+Permettre à l'utilisateur de changer de langue sur ton site.
+```

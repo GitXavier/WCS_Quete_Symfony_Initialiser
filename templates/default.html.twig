@@ -3,20 +3,22 @@
 {% block body %}
 
     <div class="jumbotron text-center">
-        <h1>Bienvenue sur mon blog</h1>
+        <h1>
+            {{ 'home.title'|trans }}
+        </h1>
     </div>
 
     <div class="container">
         <a href="{{ path('article_index')}}">
-            1- Articles
+            {{ 'lien.articles'|trans }}
         </a>
         <br>
         <a href="{{ path('category_index')}}">
-            2- Catégories.
+            {{ 'lien.categorys'|trans }}
         </a>
         <br>
         <a href="{{ path('tag_index') }}">
-            3- tags.
+            {{ 'lien.tags'|trans }}
         </a>
     </div>
 {% endblock %}
